@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Items and Print Receipt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Items and Print Receipt</h1>
+        <form id="itemForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" name="itemName" required>
+            </div>
+            <div class="form-group">
+                <label for="itemQty">Quantity:</label>
+                <input type="number" id="itemQty" name="itemQty" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="itemPrice">Price:</label>
+                <input type="number" id="itemPrice" name="itemPrice" step="0.01" required>
+            </div>
+            <button type="button" onclick="addItem()">Add Item</button>
+        </form>
+
+        <div id="itemList">
+            <!-- Item list will be dynamically populated here -->
+        </div>
+
+        <button type="button" onclick="submitItems()">Submit and Print Receipt</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
