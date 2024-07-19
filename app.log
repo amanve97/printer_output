@@ -1,0 +1,143 @@
+2024-07-20 02:20:48,089 - app - INFO - Handling request: GET /
+2024-07-20 02:20:48,118 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:20:48,125 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:21:15,607 - app - INFO - Handling request: POST /submit_items
+2024-07-20 02:21:15,623 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 02:23:11,329 - app - INFO - Handling request: GET /
+2024-07-20 02:23:11,358 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:23:11,359 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:23:11,551 - app - INFO - Handling request: GET /
+2024-07-20 02:23:11,572 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:23:11,573 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:23:25,932 - app - INFO - Handling request: POST /submit_items
+2024-07-20 02:23:25,937 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 02:28:28,868 - app - INFO - Handling request: GET /
+2024-07-20 02:28:28,896 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:28:28,899 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:29:12,954 - app - INFO - Handling request: POST /submit_items
+2024-07-20 02:29:12,962 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 02:31:45,136 - app - INFO - Handling request: POST /submit_items
+2024-07-20 02:31:45,152 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 02:33:14,064 - app - INFO - Handling request: POST /submit_items
+2024-07-20 02:33:14,069 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 02:39:52,662 - app - INFO - Handling request: GET /
+2024-07-20 02:39:52,662 - app - INFO - Index page accessed
+2024-07-20 02:39:52,685 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:39:52,690 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:40:12,979 - app - INFO - Handling request: POST /submit_items
+2024-07-20 02:40:12,994 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 02:40:12,996 - app - INFO - Printing receipt...
+2024-07-20 02:43:02,608 - app - INFO - Handling request: GET /
+2024-07-20 02:43:02,608 - app - INFO - Index page accessed
+2024-07-20 02:43:02,642 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:43:02,649 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:45:33,153 - app - INFO - Handling request: GET /
+2024-07-20 02:45:33,153 - app - INFO - Index page accessed
+2024-07-20 02:45:33,184 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:45:33,186 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:45:59,040 - app - INFO - Handling request: GET /
+2024-07-20 02:45:59,040 - app - INFO - Index page accessed
+2024-07-20 02:45:59,071 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:45:59,073 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:47:12,756 - app - INFO - Handling request: GET /
+2024-07-20 02:47:12,756 - app - INFO - Index page accessed
+2024-07-20 02:47:12,788 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:47:12,788 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 02:52:38,885 - app - INFO - Handling request: GET /
+2024-07-20 02:52:38,885 - app - INFO - Index page accessed
+2024-07-20 02:52:38,916 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 02:52:38,917 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:04:43,863 - app - INFO - Handling request: GET /
+2024-07-20 03:04:43,863 - app - INFO - Index page accessed
+2024-07-20 03:04:43,884 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:04:43,884 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:05:07,002 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:05:07,010 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:07:02,844 - app - INFO - Handling request: GET /
+2024-07-20 03:07:02,844 - app - INFO - Index page accessed
+2024-07-20 03:07:02,875 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:07:02,877 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:07:03,511 - app - INFO - Handling request: GET /
+2024-07-20 03:07:03,511 - app - INFO - Index page accessed
+2024-07-20 03:07:03,537 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:07:03,539 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:09:55,618 - app - INFO - Handling request: GET /
+2024-07-20 03:09:55,618 - app - INFO - Index page accessed
+2024-07-20 03:09:55,656 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:09:55,667 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:09:56,368 - app - INFO - Handling request: GET /
+2024-07-20 03:09:56,368 - app - INFO - Index page accessed
+2024-07-20 03:09:56,392 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:09:56,394 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:09:56,629 - app - INFO - Handling request: GET /
+2024-07-20 03:09:56,633 - app - INFO - Index page accessed
+2024-07-20 03:09:56,667 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:09:56,677 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:10:04,602 - app - INFO - Handling request: GET /
+2024-07-20 03:10:04,602 - app - INFO - Index page accessed
+2024-07-20 03:10:04,644 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:10:04,648 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:10:12,940 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:10:12,950 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:14:07,520 - app - INFO - Handling request: GET /
+2024-07-20 03:14:07,520 - app - INFO - Index page accessed
+2024-07-20 03:14:07,568 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:14:07,573 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:14:18,426 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:14:18,444 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:14:18,445 - app - INFO - Printing receipt...
+2024-07-20 03:14:18,728 - app - ERROR - Failed to open printer: cannot access local variable 'item' where it is not associated with a value
+2024-07-20 03:17:54,266 - app - INFO - Handling request: GET /
+2024-07-20 03:17:54,266 - app - INFO - Index page accessed
+2024-07-20 03:17:54,305 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:17:54,308 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:18:32,760 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:18:32,771 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:18:32,772 - app - INFO - Printing receipt...
+2024-07-20 03:18:32,916 - app - ERROR - Failed to open printer: cannot access local variable 'item' where it is not associated with a value
+2024-07-20 03:20:56,392 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:20:56,410 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:20:56,413 - app - INFO - Printing receipt...
+2024-07-20 03:20:56,537 - app - ERROR - Failed to open printer: cannot access local variable 'item' where it is not associated with a value
+2024-07-20 03:23:22,906 - app - INFO - Handling request: GET /
+2024-07-20 03:23:22,908 - app - INFO - Index page accessed
+2024-07-20 03:23:22,938 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:23:22,939 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:23:56,956 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:23:56,972 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:23:56,972 - app - INFO - Printing receipt...
+2024-07-20 03:23:57,129 - app - ERROR - Failed to open printer: cannot access local variable 'receipt_content' where it is not associated with a value
+2024-07-20 03:28:50,303 - app - INFO - Handling request: GET /
+2024-07-20 03:28:50,303 - app - INFO - Index page accessed
+2024-07-20 03:28:50,340 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:50,346 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:28:50,549 - app - INFO - Handling request: GET /
+2024-07-20 03:28:50,549 - app - INFO - Index page accessed
+2024-07-20 03:28:50,575 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:50,576 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:28:50,799 - app - INFO - Handling request: GET /
+2024-07-20 03:28:50,802 - app - INFO - Index page accessed
+2024-07-20 03:28:50,848 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:50,848 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:28:50,985 - app - INFO - Handling request: GET /
+2024-07-20 03:28:50,986 - app - INFO - Index page accessed
+2024-07-20 03:28:51,017 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:51,023 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:28:51,192 - app - INFO - Handling request: GET /
+2024-07-20 03:28:51,192 - app - INFO - Index page accessed
+2024-07-20 03:28:51,235 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:51,240 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:28:51,583 - app - INFO - Handling request: GET /
+2024-07-20 03:28:51,585 - app - INFO - Index page accessed
+2024-07-20 03:28:51,608 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:51,609 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:28:51,819 - app - INFO - Handling request: GET /
+2024-07-20 03:28:51,823 - app - INFO - Index page accessed
+2024-07-20 03:28:51,857 - app - INFO - Handling request: GET /static/styles.css
+2024-07-20 03:28:51,858 - app - INFO - Handling request: GET /static/script.js
+2024-07-20 03:29:48,630 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:29:48,638 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:29:48,641 - app - INFO - Printing receipt...
+2024-07-20 03:31:21,414 - app - INFO - Handling request: POST /submit_items
+2024-07-20 03:31:21,424 - app - INFO - Handling request: POST /print_receipt
+2024-07-20 03:31:21,426 - app - INFO - Printing receipt...

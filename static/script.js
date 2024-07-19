@@ -4,12 +4,18 @@ function addItem() {
     const itemName = document.getElementById('itemName').value;
     const itemQty = document.getElementById('itemQty').value;
     const itemPrice = document.getElementById('itemPrice').value;
+    const receiptNo = document.getElementById('receiptNo').value;
+    const officeNo = document.getElementById('officeNo').value;
 
-    if (itemName && itemQty && itemPrice) {
+
+    if (itemName && itemQty && itemPrice ) {
         items.push({
             name: itemName,
             qty: parseInt(itemQty),
-            price: parseFloat(itemPrice)
+            price: parseFloat(itemPrice),
+            ReceiptNo: receiptNo,
+            OfficeNo: officeNo
+
         });
 
         updateItemList();
@@ -26,7 +32,7 @@ function updateItemList() {
     items.forEach((item, index) => {
         const itemElement = document.createElement('div');
         itemElement.className = 'item';
-        itemElement.innerHTML = `${item.name}: ${item.qty} x $${item.price.toFixed(2)}`;
+        itemElement.innerHTML = `${item.name}: ${item.qty} x ${item.price.toFixed(2)} ${item.ReceiptNo} `;
         itemList.appendChild(itemElement);
     });
 }
@@ -47,13 +53,29 @@ function submitItems() {
     .then(data => {
         console.log(data.message);
         printReceipt();
+       
     })
     .catch(error => console.error('Error:', error));
 }
 
 function printReceipt() {
-    fetch('/print_receipt')
-    .then(response => response.text())
-    .then(data => console.log(data))
+    fetch('/print_receipt', {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert(`Error: ${data.error}`);
+        } else {
+            alert(data.message);
+            clearItems();
+        }
+    })
     .catch(error => console.error('Error:', error));
+    
+}
+
+function clearItems() {
+    items = [];
+    updateItemList();
 }
