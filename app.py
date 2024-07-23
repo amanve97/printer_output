@@ -2,36 +2,29 @@ from flask import Flask, request, jsonify, render_template
 from datetime import datetime
 import win32print
 import logging
-from logging.handlers import RotatingFileHandler
-
 
 current_date = datetime.now().date()
 current_time = datetime.now().time()
-formated_time =current_time.strftime("%H:%M")
-
+formated_time = current_time.strftime("%H:%M")
 
 app = Flask(__name__)
 items = []  # Global variable to store items
 
+# Set up logging
 log_file_handler = logging.FileHandler('app.log')
 log_file_handler.setLevel(logging.DEBUG)
-
-
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 log_file_handler.setFormatter(formatter)
-
 
 if not app.debug:
     app.logger.addHandler(log_file_handler)
 
 app.logger.setLevel(logging.DEBUG)
 
-
 # Log Flask requests
 @app.before_request
 def log_request_info():
     app.logger.info('Handling request: %s %s', request.method, request.path)
-
 
 @app.route('/')
 def index():
@@ -44,11 +37,10 @@ def submit_items():
     data = request.json
     items = data['items']
     
-    # Print received items data to console
-    print("Received Items:")
+    # Print received items data to console and log
+    app.logger.info("Received Items:")
     for item in items:
-        
-        print(f"{item['name']}: {item['qty']} x Rs{item['price']:.2f}")
+        app.logger.info(f"{item['name']}: {item['qty']} x Rs{item['rate']:.2f}")
 
     return jsonify({"message": "Items received successfully"})
 
@@ -57,29 +49,23 @@ def print_receipt():
     if not items:
         return jsonify({"error": "No items to print"}), 400
     try:
-        # Implement printing logic here
         app.logger.info("Printing receipt...")
-        print("Printing receipt...")
         print_receipt_to_printer(items)  # Pass the items to the printing function
         return jsonify({"message": "Receipt printing initiated"})
     except Exception as e:
-        # Capture and report any errors
         app.logger.error(f"Error printing receipt: {e}")
-
-        print(f"Error printing receipt: {e}")
         return jsonify({"error": str(e)}), 500
-    
 
 def print_receipt_to_printer(items):
     PRINTER_NAME = "POS58 printer(2)"
-
     try:
         hPrinter = win32print.OpenPrinter(PRINTER_NAME)
         hJob = win32print.StartDocPrinter(hPrinter, 1, ("Receipt", None, "RAW"))
         win32print.StartPagePrinter(hPrinter)
         
-        for a in items:
-            receipt_number = a['ReceiptNo']
+        # Get the receipt number from the first item (assuming all items have the same receipt number)
+        receipt_number = items[0]['ReceiptNo']
+
         # Build the receipt content
         receipt_content = (
             "-------------------------------\n"
@@ -90,27 +76,26 @@ def print_receipt_to_printer(items):
             "       Thank you for dining!\n"
             "-------------------------------\n"
             "\n"
-            f"Date:{current_date}   Time:{formated_time} \n"
-            f"Receipt No:{receipt_number}\n"
+            f"Date: {current_date}   Time: {formated_time} \n"
+            f"Receipt No: {receipt_number}\n"
             "\n"
-            "Item           Qty    Price\n"
+            "Item       Qty   Rate   Price\n"
             "-------------------------------\n"
         )
 
         # Add items dynamically
         subtotal = 0
         for item in items:
-            line = f"{item['name'][:15]:<15} {item['qty']:<5} {item['price']:<6.2f}\n"
+            price = item['rate'] * item['qty']
+            line = f"{item['name'][:12]:<12} {item['qty']:<2} {item['rate']:<4.2f} {price:<3.2f}\n"
             receipt_content += line
-            subtotal += item['qty'] * item['price']
+            subtotal += price
 
-        #tax = subtotal * 0.05
         total = subtotal
 
         receipt_content += (
             "-------------------------------\n"
             f"Subtotal              {subtotal:.2f}\n"
-            #f"Tax (5%)              {tax:.2f}\n"
             "-------------------------------\n"
             f"Total               Rs {total:.2f}\n"
             "-------------------------------\n"

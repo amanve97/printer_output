@@ -3,16 +3,16 @@ let items = [];
 function addItem() {
     const itemName = document.getElementById('itemName').value;
     const itemQty = document.getElementById('itemQty').value;
-    const itemPrice = document.getElementById('itemPrice').value;
+    const itemRate = document.getElementById('itemRate').value;
     const receiptNo = document.getElementById('receiptNo').value;
     const officeNo = document.getElementById('officeNo').value;
 
 
-    if (itemName && itemQty && itemPrice ) {
+    if (itemName && itemQty && itemRate ) {
         items.push({
             name: itemName,
             qty: parseInt(itemQty),
-            price: parseFloat(itemPrice),
+            rate: parseFloat(itemRate),
             ReceiptNo: receiptNo,
             OfficeNo: officeNo
 
@@ -32,7 +32,7 @@ function updateItemList() {
     items.forEach((item, index) => {
         const itemElement = document.createElement('div');
         itemElement.className = 'item';
-        itemElement.innerHTML = `${item.name}: ${item.qty} x ${item.price.toFixed(2)} ${item.ReceiptNo} `;
+        itemElement.innerHTML = `${item.name}:  ${item.qty} x ${item.rate.toFixed(2)} ${item.ReceiptNo} `;
         itemList.appendChild(itemElement);
     });
 }
