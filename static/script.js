@@ -6,6 +6,7 @@ function addItem() {
     const itemRate = document.getElementById('itemRate').value;
     const receiptNo = document.getElementById('receiptNo').value;
     const officeNo = document.getElementById('officeNo').value;
+    const Date = document.getElementById('date').value
 
 
     if (itemName && itemQty && itemRate ) {

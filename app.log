@@ -141,3 +141,48 @@
 2024-07-20 03:31:21,414 - app - INFO - Handling request: POST /submit_items
 2024-07-20 03:31:21,424 - app - INFO - Handling request: POST /print_receipt
 2024-07-20 03:31:21,426 - app - INFO - Printing receipt...
+2024-07-24 01:29:45,309 - app - INFO - Handling request: GET /
+2024-07-24 01:29:45,317 - app - INFO - Index page accessed
+2024-07-24 01:29:45,351 - app - INFO - Handling request: GET /static/styles.css
+2024-07-24 01:29:45,361 - app - INFO - Handling request: GET /static/script.js
+2024-07-24 01:39:03,840 - app - INFO - Handling request: GET /
+2024-07-24 01:39:03,840 - app - INFO - Index page accessed
+2024-07-24 01:39:03,875 - app - INFO - Handling request: GET /static/styles.css
+2024-07-24 01:39:03,889 - app - INFO - Handling request: GET /static/script.js
+2024-07-24 01:39:14,641 - app - INFO - Handling request: POST /submit_items
+2024-07-24 01:39:14,642 - app - INFO - Received Items:
+2024-07-24 01:39:14,643 - app - INFO - Maggi: 20 x Rs2000.00
+2024-07-24 01:39:14,657 - app - INFO - Handling request: POST /print_receipt
+2024-07-24 01:39:14,658 - app - INFO - Printing receipt...
+2024-07-24 01:39:40,057 - app - INFO - Handling request: POST /submit_items
+2024-07-24 01:39:40,058 - app - INFO - Received Items:
+2024-07-24 01:39:40,058 - app - INFO - Maggi: 20 x Rs2000.00
+2024-07-24 01:39:40,062 - app - INFO - Handling request: POST /print_receipt
+2024-07-24 01:39:40,063 - app - INFO - Printing receipt...
+2024-07-24 01:40:06,270 - app - INFO - Handling request: POST /submit_items
+2024-07-24 01:40:06,270 - app - INFO - Received Items:
+2024-07-24 01:40:06,271 - app - INFO - Maggi: 20 x Rs2000.00
+2024-07-24 01:40:06,274 - app - INFO - Handling request: POST /print_receipt
+2024-07-24 01:40:06,274 - app - INFO - Printing receipt...
+2024-07-24 23:08:28,310 - app - INFO - Handling request: GET /
+2024-07-24 23:08:28,310 - app - INFO - Index page accessed
+2024-07-24 23:08:28,359 - app - INFO - Handling request: GET /static/styles.css
+2024-07-24 23:08:28,409 - app - INFO - Handling request: GET /static/script.js
+2024-07-24 23:11:57,572 - app - INFO - Handling request: POST /submit_items
+2024-07-24 23:11:57,573 - app - INFO - Received Items:
+2024-07-24 23:11:57,575 - app - INFO - Maggi: 2 x Rs20.00
+2024-07-24 23:11:57,576 - app - INFO - Thali: 2 x Rs60.00
+2024-07-24 23:11:57,583 - app - INFO - Handling request: POST /print_receipt
+2024-07-24 23:11:57,584 - app - INFO - Printing receipt...
+2024-07-24 23:15:36,034 - app - INFO - Handling request: GET /
+2024-07-24 23:15:36,042 - app - INFO - Index page accessed
+2024-07-24 23:15:36,080 - app - INFO - Handling request: GET /static/styles.css
+2024-07-24 23:15:36,087 - app - INFO - Handling request: GET /static/script.js
+2024-07-24 23:24:41,031 - app - INFO - Handling request: GET /
+2024-07-24 23:24:41,032 - app - INFO - Index page accessed
+2024-07-24 23:24:41,069 - app - INFO - Handling request: GET /static/styles.css
+2024-07-24 23:24:41,075 - app - INFO - Handling request: GET /static/script.js
+2024-07-24 23:24:42,227 - app - INFO - Handling request: GET /
+2024-07-24 23:24:42,227 - app - INFO - Index page accessed
+2024-07-24 23:24:42,251 - app - INFO - Handling request: GET /static/styles.css
+2024-07-24 23:24:42,251 - app - INFO - Handling request: GET /static/script.js
