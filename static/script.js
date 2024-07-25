@@ -6,7 +6,7 @@ function addItem() {
     const itemRate = document.getElementById('itemRate').value;
     const receiptNo = document.getElementById('receiptNo').value;
     const officeNo = document.getElementById('officeNo').value;
-    const Date = document.getElementById('date').value
+    const date = document.getElementById('date').value
 
 
     if (itemName && itemQty && itemRate ) {
@@ -15,7 +15,8 @@ function addItem() {
             qty: parseInt(itemQty),
             rate: parseFloat(itemRate),
             ReceiptNo: receiptNo,
-            OfficeNo: officeNo
+            OfficeNo: officeNo,
+            Date: date
 
         });
 
@@ -33,7 +34,7 @@ function updateItemList() {
     items.forEach((item, index) => {
         const itemElement = document.createElement('div');
         itemElement.className = 'item';
-        itemElement.innerHTML = `${item.name}:  ${item.qty} x ${item.rate.toFixed(2)} ${item.ReceiptNo} `;
+        itemElement.innerHTML = `${item.name}:  ${item.qty} x ${item.rate.toFixed(2)} ${item.ReceiptNo}  ${item.date}`;
         itemList.appendChild(itemElement);
     });
 }
