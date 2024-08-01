@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Add Items and Print Receipt</h1>
+        <h1>Aditi's Corner Dashboard</h1>
         <form id="itemForm" onsubmit="return false;">
             <div class="form-group">
                 <label for="itemName">Item Name:</label>
@@ -19,9 +19,14 @@
                 <input type="number" id="itemQty" name="itemQty" min="1" required>
             </div>
             <div class="form-group">
-                <label for="itemPrice">Price:</label>
-                <input type="number" id="itemPrice" name="itemPrice" step="0.01" required>
+                <label for="itemRate">Rate:</label>
+                <input type="number" id="itemRate" name="itemRate" step="0.01" required>
             </div>
+            <div class="form-group">
+                <label for="receiptNo">Receipt No:</label>
+                <input type="text" id="receiptNo" name="receiptNo">
+            </div>
+
             <button type="button" onclick="addItem()">Add Item</button>
         </form>
 

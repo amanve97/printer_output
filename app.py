@@ -1,4 +1,8 @@
+
 from flask import Flask, request, jsonify, render_template
+from datetime import datetime
+import win32print
+import logging
 
 app = Flask(__name__)
 items = []  # Global variable to store items
@@ -16,7 +20,7 @@ def submit_items():
     # Print received items data to console
     print("Received Items:")
     for item in items:
-        print(f"{item['name']}: {item['qty']} x ${item['price']:.2f}")
+        print(f"{item['name']}: {item['qty']} x ${item['rate']:.2f}")
 
     return jsonify({"message": "Items received successfully"})
 
@@ -29,19 +33,13 @@ def print_receipt():
     return "Receipt printing initiated"
 
 def print_receipt_to_printer(items):
-    import win32print
-    import win32ui
-
     PRINTER_NAME = "POS58 printer(2)"
-
-    hPrinter = win32print.OpenPrinter(PRINTER_NAME)
     try:
+        hPrinter = win32print.OpenPrinter(PRINTER_NAME)
         hJob = win32print.StartDocPrinter(hPrinter, 1, ("Receipt", None, "RAW"))
-        try:
-            win32print.StartPagePrinter(hPrinter)
-            
+        win32print.StartPagePrinter(hPrinter)
             # Example content for the receipt
-            receipt_content = (
+        receipt_content = (
                 "-------------------------------\n"
                 "        Aditi'S  Corner\n"
                 "        Shop no. 316 \n"
@@ -58,30 +56,37 @@ def print_receipt_to_printer(items):
             )
 
             # Add items dynamically
-            for item in items:
-                receipt_content += f"{item['name'][:15]:<15} {item['qty']:<5} {item['price']:<6.2f}\n"
+        subtotal = 0
+        for item in items:
+            price = item['rate'] * item['qty']
+            line = f"{item['name'][:12]:<12} {item['qty']:<2} {item['rate']:<4.2f} {price:<3.2f}\n"
+            receipt_content += line
+            subtotal += price
 
-            receipt_content += (
-                "-------------------------------\n"
-                "Subtotal              1555.00\n"
-                "Tax (5%)              2.95\n"
-                "-------------------------------\n"
-                "Total                2252.95\n"
-                "-------------------------------\n"
-                "    Thank you for your visit!\n"
-                "  Please come again!\n"
-                "\n"
-                "-------------------------------\n"
-            )
+        total = subtotal
+
+        receipt_content += (
+            "-------------------------------\n"
+            f"Subtotal              {subtotal:.2f}\n"
+            "-------------------------------\n"
+            f"Total               Rs {total:.2f}\n"
+            "-------------------------------\n"
+            "    Thank you for your visit!\n"
+            "  Please come again!\n"
+            "\n"
+            "-------------------------------\n"
+        )
 
             # Send the receipt content to the printer
-            win32print.WritePrinter(hPrinter, receipt_content.encode())
-            
-            win32print.EndPagePrinter(hPrinter)
-        finally:
-            win32print.EndDocPrinter(hPrinter)
+        win32print.WritePrinter(hPrinter, receipt_content.encode())
+        win32print.EndPagePrinter(hPrinter)
+        win32print.EndDocPrinter(hPrinter)
+    except Exception as e:
+        app.logger.error(f"Failed to open printer: {e}")
+        print(f"Error during printing: {e}")
     finally:
-        win32print.ClosePrinter(hPrinter)
+        if 'hPrinter' in locals():
+            win32print.ClosePrinter(hPrinter)
 
 if __name__ == '__main__':
     app.run(debug=True)
