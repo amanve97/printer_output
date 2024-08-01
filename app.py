@@ -48,10 +48,8 @@ def print_receipt_to_printer(items):
                 "       Thank you for dining!\n"
                 "-------------------------------\n"
                 "\n"
-                "Date: yyyy-mm-dd   Time: hh:mm\n"
-                "Receipt No: xxxxxx\n"
                 "\n"
-                "Item           Qty    Price\n"
+                "Item       Qty   Rate   Price\n"
                 "-------------------------------\n"
             )
 
