@@ -4,14 +4,12 @@ function addItem() {
     const itemName = document.getElementById('itemName').value;
     const itemQty = document.getElementById('itemQty').value;
     const itemRate = document.getElementById('itemRate').value;
-    const receiptNo = document.getElementById('receiptNo').value;
 
     if (itemName && itemQty && itemRate) {
         items.push({
             name: itemName,
             qty: parseInt(itemQty),
-            rate: parseFloat(itemRate),
-            ReceiptNo: receiptNo
+            rate: parseFloat(itemRate)
         });
 
         updateItemList();
@@ -28,7 +26,7 @@ function updateItemList() {
     items.forEach((item, index) => {
         const itemElement = document.createElement('div');
         itemElement.className = 'item';
-        itemElement.innerHTML = `${item.name}: ${item.qty} x ${item.rate.toFixed(2)} ${item.ReceiptNo}`;
+        itemElement.innerHTML = `${item.name}: ${item.qty} x ${item.rate.toFixed(2)}`;
         itemList.appendChild(itemElement);
     });
 }
@@ -38,12 +36,19 @@ function clearForm() {
 }
 
 function submitItems() {
+    const receiptDate = document.getElementById('receiptDate').value;
+    const receiptNo = document.getElementById('receiptNo').value;
+
     fetch('/submit_items', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ items })
+        body: JSON.stringify({ 
+            items,
+            date: receiptDate,
+            receiptNo: receiptNo 
+        })
     })
     .then(response => response.json())
     .then(data => {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Items and Print Receipt</title>
+    <title>Aditi's Corner Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -22,11 +22,6 @@
                 <label for="itemRate">Rate:</label>
                 <input type="number" id="itemRate" name="itemRate" step="0.01" required>
             </div>
-            <div class="form-group">
-                <label for="receiptNo">Receipt No:</label>
-                <input type="text" id="receiptNo" name="receiptNo">
-            </div>
-
             <button type="button" id="addItemButton" onclick="addItem()">Add Item</button>
         </form>
 
@@ -34,7 +29,17 @@
             <!-- Item list will be dynamically populated here -->
         </div>
 
-        <button type="button" onclick="submitItems()">Submit and Print Receipt</button>
+        <form id="receiptForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="receiptDate">Date:</label>
+                <input type="date" id="receiptDate" name="receiptDate" required>
+            </div>
+            <div class="form-group">
+                <label for="receiptNo">Receipt No:</label>
+                <input type="text" id="receiptNo" name="receiptNo" required>
+            </div>
+            <button type="button" onclick="submitItems()">Submit and Print Receipt</button>
+        </form>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
