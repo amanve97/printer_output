@@ -5,8 +5,6 @@ import logging
 
 app = Flask(__name__)
 items = []  # Global variable to store items
-receipt_date = ""
-receipt_no = ""
 
 @app.route('/')
 def index():
@@ -14,36 +12,40 @@ def index():
 
 @app.route('/submit_items', methods=['POST'])
 def submit_items():
-    global items, receipt_date, receipt_no
+    global items
     data = request.json
-    items = data['items']
-    receipt_date = data['date']
-    receipt_no = data['receiptNo']
-    
+    items = data.get('items', [])
+    receipt_date = data.get('date')
+    receipt_no = data.get('receiptNo')
+
+    # Validate inputs
+    if not receipt_date or not items:
+        return jsonify({"success": False, "message": "Please fill in all fields and add at least one item."})
+
+    # Convert the date format to DD-MM-YY
+    formatted_date = datetime.strptime(receipt_date, '%Y-%m-%d').strftime('%d-%m-%y')
+
     # Print received items data to console
-    print("Received Items:")
+    print(f"Received Items on {formatted_date} (Receipt No: {receipt_no}):")
     for item in items:
         print(f"{item['name']}: {item['qty']} x ${item['rate']:.2f}")
-    print(f"Receipt Date: {receipt_date}")
-    print(f"Receipt No: {receipt_no}")
 
-    return jsonify({"message": "Items received successfully"})
+    return jsonify({"success": True, "message": "Items received successfully"})
 
 @app.route('/print_receipt', methods=['GET'])
 def print_receipt():
     # Implement printing logic here
     print("Printing receipt...")
-    print_receipt_to_printer(items, receipt_date, receipt_no)  # Pass the items, date, and receipt number to the printing function
+    print_receipt_to_printer(items)  # Pass the items to the printing function
 
     return "Receipt printing initiated"
 
-def print_receipt_to_printer(items, receipt_date, receipt_no):
+def print_receipt_to_printer(items):
     PRINTER_NAME = "POS58 printer(2)"
     try:
         hPrinter = win32print.OpenPrinter(PRINTER_NAME)
         hJob = win32print.StartDocPrinter(hPrinter, 1, ("Receipt", None, "RAW"))
         win32print.StartPagePrinter(hPrinter)
-        
         # Example content for the receipt
         receipt_content = (
             "-------------------------------\n"
@@ -53,9 +55,7 @@ def print_receipt_to_printer(items, receipt_date, receipt_no):
             "        Phone: 9699599602\n"
             "       Thank you for dining!\n"
             "-------------------------------\n"
-            f"Date: {receipt_date}\n"
-            f"Receipt No: {receipt_no}\n"
-            "-------------------------------\n"
+            "\n"
             "\n"
             "Item       Qty   Rate   Price\n"
             "-------------------------------\n"

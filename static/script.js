@@ -39,6 +39,11 @@ function submitItems() {
     const receiptDate = document.getElementById('receiptDate').value;
     const receiptNo = document.getElementById('receiptNo').value;
 
+    if (!receiptDate || items.length === 0) {
+        alert('Please fill in all fields and add at least one item.');
+        return;
+    }
+
     fetch('/submit_items', {
         method: 'POST',
         headers: {
@@ -52,10 +57,11 @@ function submitItems() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.message);
-        printReceipt();
-        // Hide the Add Item button
-        document.getElementById('addItemButton').style.display = 'none';
+        if (data.success) {
+            printReceipt();
+        } else {
+            alert(data.message);
+        }
     })
     .catch(error => console.error('Error:', error));
 }
@@ -65,11 +71,18 @@ function printReceipt() {
     .then(response => response.text())
     .then(data => {
         console.log(data);
-        // Clear the items and update the list
         items = [];
         updateItemList();
+        resetPage();
     })
     .catch(error => console.error('Error:', error));
+}
+
+function resetPage() {
+    document.getElementById('itemForm').reset();
+    document.getElementById('receiptForm').reset();
+    document.getElementById('addItemButton').style.display = 'inline';
+    clearItems();
 }
 
 function clearItems() {
