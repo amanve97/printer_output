@@ -4,6 +4,10 @@ from datetime import datetime
 import win32print
 import logging
 
+current_date = datetime.now().date()
+current_time = datetime.now().time()
+formated_time = current_time.strftime("%H:%M")
+
 app = Flask(__name__)
 items = []  # Global variable to store items
 
@@ -39,6 +43,9 @@ def print_receipt_to_printer(items):
         hJob = win32print.StartDocPrinter(hPrinter, 1, ("Receipt", None, "RAW"))
         win32print.StartPagePrinter(hPrinter)
             # Example content for the receipt
+
+        receipt_number = items[0]['ReceiptNo']
+            
         receipt_content = (
                 "-------------------------------\n"
                 "        Aditi'S  Corner\n"
@@ -48,6 +55,8 @@ def print_receipt_to_printer(items):
                 "       Thank you for dining!\n"
                 "-------------------------------\n"
                 "\n"
+                f"Date: {current_date}   Time: {formated_time} \n"
+                f"Receipt No: {receipt_number}\n"
                 "\n"
                 "Item       Qty   Rate   Price\n"
                 "-------------------------------\n"

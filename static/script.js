@@ -11,7 +11,7 @@ function addItem() {
             name: itemName,
             qty: parseInt(itemQty),
             rate: parseFloat(itemRate),
-            receiptNo: receiptNo
+            ReceiptNo: receiptNo
         });
 
         updateItemList();
@@ -28,7 +28,7 @@ function updateItemList() {
     items.forEach((item, index) => {
         const itemElement = document.createElement('div');
         itemElement.className = 'item';
-        itemElement.innerHTML = `${item.name}: ${item.qty} x ${item.rate.toFixed(2)} ${item.receiptNo}`;
+        itemElement.innerHTML = `${item.name}: ${item.qty} x ${item.rate.toFixed(2)} ${item.ReceiptNo}`;
         itemList.appendChild(itemElement);
     });
 }
